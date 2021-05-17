@@ -1,0 +1,48 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-05-10T09:47:45.243Z",
+        "line": 3,
+        "name": "Check correct page is opened",
+        "description": "",
+        "id": "test-the-links;check-correct-page-is-opened",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2503000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user taps on a link",
+            "match": {
+              "location": "StepDefinitions.linkSteps.userTapsOnALink()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 74000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "correct page is opened",
+            "match": {
+              "location": "StepDefinitions.linkSteps.correctPageIsOpened()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "test the links",
+    "description": "",
+    "id": "test-the-links",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/pages.feature",
+    "tags": []
+  }
+]
