@@ -13,6 +13,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.Homepage;
+import pages.InsightsPage;
+import pages.OurWorkPage;
 
 public class LinkSteps  {
 	public WebDriver driver;
@@ -54,4 +56,34 @@ public class LinkSteps  {
 	}
 	
 
+	@When("user clicks on our work link")
+	public void user_clicks_on_our_work_link() {
+		Homepage homepage = new Homepage(driver);
+		homepage.clickOnOurWorkLink();
+		
+	}
+
+	@Then("our work page is opened")
+	public void our_work_page_is_opened() {
+		OurWorkPage workpage = new OurWorkPage(driver);
+		Assert.assertEquals("OUR WORK", workpage.getHeaderText());
+		String urlString = driver.getCurrentUrl();
+		Assert.assertTrue(urlString.contains("https://www.candyspace.com/work"));
+	}
+	
+	@When("user clicks on All Insights link")
+	public void user_clicks_on_all_insights_link() {
+		Homepage homepage = new Homepage(driver);
+		homepage.clickAllInsightsLink();
+	}
+
+	@Then("Insights page is opened")
+	public void insights_page_is_opened() {
+		InsightsPage insightspage = new InsightsPage(driver);
+		Assert.assertEquals("INSIGHTS", insightspage.getHeaderText());
+		String urlString = driver.getCurrentUrl();
+		Assert.assertEquals("https://insights.candyspace.com/", urlString);
+	}
+	
+	
 }
